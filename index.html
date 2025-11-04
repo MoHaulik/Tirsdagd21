@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+The line between the video nodes still looks of and unprofessional, please make sure its pretty blue dots instead, and make sure everything still works, dont fuck up the code its a product for shipment to a client, so keep everything working. <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -8,32 +8,32 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --bg:#f8f9fa;
-  --surface:#ffffff;
-  --border:#e1e4e8;
-  --text:#24292f;
-  --accent:#0969da;
-  --accent-hover:#0860ca;
-  --green:#1a7f37;
-  --red:#d1242f;
-  --muted:#6e7781;
-  --grid:#e8eaed;
-  --shadow:0 1px 3px rgba(31,35,40,0.12);
-  --shadow-lg:0 8px 24px rgba(140,149,159,0.2);
+  --bg:#f8f9fa;
+  --surface:#ffffff;
+  --border:#e1e4e8;
+  --text:#24292f;
+  --accent:#0969da;
+  --accent-hover:#0860ca;
+  --green:#1a7f37;
+  --red:#d1242f;
+  --muted:#6e7781;
+  --grid:#e8eaed;
+  --shadow:0 1px 3px rgba(31,35,40,0.12);
+  --shadow-lg:0 8px 24px rgba(140,149,159,0.2);
 }
 body{
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
-  background:var(--bg);color:var(--text);height:100vh;overflow:hidden
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  background:var(--bg);color:var(--text);height:100vh;overflow:hidden
 }
 
 /* Layout */
 .app{display:flex;height:100vh}
-.panel{width:380px;background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;box-shadow:var(--shadow)}
+.panel{width:420px;background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;box-shadow:var(--shadow)}
 .canvas-wrap{flex:1;position:relative;overflow:hidden;background:var(--bg)}
 .canvas{
-  width:100%;height:100%;position:relative;
-  background-image:radial-gradient(circle,#d4d4d8 1px,transparent 1px);
-  background-size:20px 20px;
+  width:100%;height:100%;position:relative;
+  background-image:radial-gradient(circle,#d4d4d8 1px,transparent 1px);
+  background-size:20px 20px;
 }
 
 /* Panel Sections */
@@ -50,9 +50,9 @@ body{
 
 /* Buttons & Inputs */
 .btn{
-  background:var(--accent);border:none;border-radius:6px;padding:8px 16px;
-  color:#fff;cursor:pointer;font-size:13px;font-weight:500;
-  transition:all 0.2s;display:inline-flex;align-items:center;gap:6px
+  background:var(--accent);border:none;border-radius:6px;padding:8px 16px;
+  color:#fff;cursor:pointer;font-size:13px;font-weight:500;
+  transition:all 0.2s;display:inline-flex;align-items:center;gap:6px
 }
 .btn:hover{background:var(--accent-hover);transform:translateY(-1px);box-shadow:var(--shadow)}
 .btn.secondary{background:transparent;border:1px solid var(--border);color:var(--text)}
@@ -63,1133 +63,1435 @@ body{
 .btn:disabled{opacity:0.5;cursor:not-allowed}
 
 input,textarea,select{
-  width:100%;background:var(--surface);border:1px solid var(--border);
-  border-radius:6px;padding:8px 12px;color:var(--text);font-size:13px;
-  transition:border 0.2s
+  width:100%;background:var(--surface);border:1px solid var(--border);
+  border-radius:6px;padding:8px 12px;color:var(--text);font-size:13px;
+  transition:border 0.2s
 }
 input:focus,textarea:focus,select:focus{
-  outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(9,105,218,0.1)
+  outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(9,105,218,0.1)
 }
 label{
-  display:block;margin:0 0 6px;font-size:12px;font-weight:600;color:var(--text)
+  display:block;margin:0 0 6px;font-size:12px;font-weight:600;color:var(--text)
 }
 
 .field-group{
-  background:var(--surface);border:1px solid var(--border);
-  border-radius:8px;padding:16px;margin-bottom:16px
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:8px;padding:16px;margin-bottom:16px
 }
 .field-group h3{font-size:14px;font-weight:600;margin-bottom:12px;color:var(--text)}
 
 /* Nodes */
 .node{
-  position:absolute;width:160px;height:120px;border-radius:12px;
-  background:var(--surface);border:2px solid var(--border);
-  cursor:move;transition:all 0.2s;overflow:hidden;box-shadow:var(--shadow)
+  position:absolute;width:160px;height:120px;border-radius:12px;
+  background:var(--surface);border:2px solid var(--border);
+  cursor:move;transition:all 0.2s;overflow:hidden;box-shadow:var(--shadow)
 }
 .node:hover{transform:scale(1.02);box-shadow:var(--shadow-lg)}
 .node.selected{
-  border-color:var(--accent);
-  box-shadow:0 0 0 3px rgba(9,105,218,0.1),var(--shadow-lg)
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px rgba(9,105,218,0.1),var(--shadow-lg)
 }
 .node.start{border-color:var(--green)}
 
 .node-thumb{
-  position:absolute;inset:0;background-size:cover;
-  background-position:center;opacity:0.3
+  position:absolute;inset:0;background-size:cover;
+  background-position:center;opacity:0.3
 }
 .node-content{
-  position:relative;height:100%;display:flex;flex-direction:column;
-  padding:12px
+  position:relative;height:100%;display:flex;flex-direction:column;
+  padding:12px
 }
 .node-title{font-size:13px;font-weight:600;margin-bottom:4px}
 .node-type{font-size:11px;color:var(--muted);margin-bottom:8px}
 .node-icons{
-  position:absolute;bottom:8px;left:12px;display:flex;gap:4px;
-  font-size:14px
+  position:absolute;bottom:8px;left:12px;display:flex;gap:4px;
+  font-size:14px
 }
 .node-badge{
-  position:absolute;top:8px;right:8px;background:var(--green);
-  color:#fff;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:600
+  position:absolute;top:8px;right:8px;background:var(--green);
+  color:#fff;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:600
 }
 
 /* Connections */
-.connection{position:absolute;pointer-events:none;z-index:1}
-.connection path{fill:none;stroke:var(--border);stroke-width:2;opacity:0.6}
-.connection.default path{stroke:var(--muted)}
-.connection.correct path{stroke:var(--green);stroke-width:3}
-.connection.incorrect path{stroke:var(--red);stroke-width:2;stroke-dasharray:5,5}
+.connection{position:absolute;pointer-events:none;z-index:1;overflow:visible}
+.connection path{
+  fill:none;
+  stroke:var(--border);
+  stroke-width:3; /* Thicker */
+  opacity:0.7;
+  stroke-linecap:round;
+}
+.connection.default path{
+  stroke:var(--muted);
+  stroke-dasharray: 4 4; /* Dashed for default */
+  animation: dash-flow 1s linear infinite;
+}
+.connection.correct path{stroke:var(--green);stroke-width:4}
+.connection.incorrect path{stroke:var(--red);stroke-width:3;stroke-dasharray:5,5}
+
+@keyframes dash-flow {
+  to { stroke-dashoffset: -20; }
+}
 
 /* Add Menu */
 .add-menu{position:fixed;bottom:24px;right:24px;z-index:100}
 .add-btn{
-  width:56px;height:56px;border-radius:50%;background:var(--accent);
-  border:none;color:#fff;font-size:24px;cursor:pointer;
-  box-shadow:0 4px 12px rgba(9,105,218,0.3);transition:all 0.3s
+  width:56px;height:56px;border-radius:50%;background:var(--accent);
+  border:none;color:#fff;font-size:24px;cursor:pointer;
+  box-shadow:0 4px 12px rgba(9,105,218,0.3);transition:all 0.3s
 }
 .add-btn:hover{transform:rotate(90deg) scale(1.1);background:var(--accent-hover)}
 .add-options{
-  position:absolute;bottom:70px;right:0;display:none;
-  flex-direction:column;gap:8px;min-width:150px
+  position:absolute;bottom:70px;right:0;display:none;
+  flex-direction:column;gap:8px;min-width:150px
 }
 .add-options.show{display:flex}
 .add-opt{
-  background:var(--surface);border:1px solid var(--border);
-  padding:10px 16px;border-radius:8px;white-space:nowrap;
-  cursor:pointer;font-size:13px;box-shadow:var(--shadow);
-  transition:all 0.2s
+  background:var(--surface);border:1px solid var(--border);
+  padding:10px 16px;border-radius:8px;white-space:nowrap;
+  cursor:pointer;font-size:13px;box-shadow:var(--shadow);
+  transition:all 0.2s
 }
 .add-opt:hover{
-  background:var(--accent);color:#fff;transform:translateX(-4px)
+  background:var(--accent);color:#fff;transform:translateX(-4px)
 }
 
 /* Quick Actions */
 .quick-actions{display:flex;gap:8px;margin-top:12px}
 .action-btn{
-  flex:1;padding:8px;border:1px solid var(--border);border-radius:6px;
-  background:var(--surface);color:var(--text);font-size:12px;
-  cursor:pointer;transition:all 0.2s
+  flex:1;padding:8px;border:1px solid var(--border);border-radius:6px;
+  background:var(--surface);color:var(--text);font-size:12px;
+  cursor:pointer;transition:all 0.2s
 }
 .action-btn:hover{background:#f6f8fa;border-color:var(--accent)}
 
 /* Media Grid */
 .media-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px
+  display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px
 }
 .media-item{
-  aspect-ratio:16/9;background:#f6f8fa;border:2px solid var(--border);
-  border-radius:6px;position:relative;overflow:hidden;cursor:pointer;
-  transition:all 0.2s
+  aspect-ratio:16/9;background:#f6f8fa;border:2px solid var(--border);
+  border-radius:6px;position:relative;overflow:hidden;cursor:pointer;
+  transition:all 0.2s
 }
 .media-item img{width:100%;height:100%;object-fit:cover}
 .media-item.selected{border-color:var(--accent);box-shadow:0 0 0 2px rgba(9,105,218,0.1)}
 .media-item:hover{transform:scale(1.05)}
 
-/* Timeline */
-.timeline{
-  background:#f6f8fa;border:1px solid var(--border);
-  border-radius:6px;padding:12px;margin-top:8px
+/* Text Overlays */
+.text-overlays{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+.text-overlay-item{
+  background:#f6f8fa;border:1px solid var(--border);
+  border-radius:6px;padding:10px;display:flex;flex-direction:column;gap:8px
 }
-.timeline-bar{
-  height:6px;background:var(--border);border-radius:3px;
-  position:relative;margin:8px 0
+.text-overlay-controls{display:flex;gap:8px;align-items:center}
+.text-overlay-controls input[type="number"]{width:80px}
+.text-overlay-controls select{width:100px}
+.text-overlay-remove{
+  background:var(--red);border:none;color:#fff;
+  padding:4px 8px;border-radius:4px;cursor:pointer;
+  font-size:11px;transition:all 0.2s
 }
-.cue-marker{
-  position:absolute;width:12px;height:12px;background:var(--accent);
-  border-radius:50%;top:-3px;cursor:pointer;
-  border:2px solid #fff;box-shadow:var(--shadow)
+.text-overlay-remove:hover{background:#b91c1c}
+
+/* Color preview */
+.color-preview{
+  width:24px;height:24px;border-radius:4px;
+  border:1px solid var(--border);margin-left:4px
 }
-.cue-marker:hover{transform:scale(1.2)}
 
 /* Preview Modal */
 .preview-modal{
-  position:fixed;inset:0;background:rgba(0,0,0,0.5);
-  display:none;align-items:center;justify-content:center;z-index:1000
+  position:fixed;inset:0;background:rgba(0,0,0,0.5);
+  display:none;align-items:center;justify-content:center;z-index:1000
 }
 .preview-modal.show{display:flex}
 .preview-content{
-  background:var(--surface);border-radius:12px;
-  width:90%;max-width:900px;height:80vh;
-  display:flex;flex-direction:column;box-shadow:var(--shadow-lg)
+  background:var(--surface);border-radius:12px;
+  width:90%;max-width:900px;height:80vh;
+  display:flex;flex-direction:column;box-shadow:var(--shadow-lg)
 }
 .preview-header{
-  padding:20px;border-bottom:1px solid var(--border);
-  display:flex;justify-content:space-between;align-items:center
+  padding:20px;border-bottom:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center
 }
 .preview-header h2{font-size:18px;font-weight:600}
 .preview-body{
-  flex:1;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;
-  padding:20px;overflow:auto
+  flex:1;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  padding:20px;overflow:auto;position:relative
 }
 .preview-video{
-  width:100%;max-width:640px;max-height:360px;
-  background:#000;border-radius:8px;margin-bottom:20px
+  width:100%;max-width:640px;max-height:360px;
+  background:#000;border-radius:8px;margin-bottom:20px
 }
 .preview-content-section{
-  width:100%;max-width:640px;margin-bottom:20px
+  width:100%;max-width:640px;margin-bottom:20px
 }
 .preview-images{
-  display:flex;gap:12px;flex-wrap:wrap;justify-content:center;
-  margin-bottom:16px
+  display:flex;gap:12px;flex-wrap:wrap;justify-content:center;
+  margin-bottom:16px
 }
 .preview-images img{
-  width:120px;height:80px;object-fit:cover;
-  border-radius:6px;box-shadow:var(--shadow)
+  width:120px;height:80px;object-fit:cover;
+  border-radius:6px;box-shadow:var(--shadow)
 }
-.preview-text{
-  background:#f6f8fa;padding:16px;border-radius:8px;
-  margin-bottom:16px;font-size:14px;line-height:1.6
+.preview-text-overlay{
+  position:absolute;top:40px;left:50%;transform:translateX(-50%);
+  padding:16px 20px;border-radius:8px;color:#fff;
+  font-size:14px;font-weight:500;max-width:500px;
+  box-shadow:var(--shadow-lg);display:none;text-align:center;
+  background:rgba(0,0,0,0.7);
+  transition: opacity 0.3s;
+}
+.preview-text-overlay.show{display:block; opacity:1;}
+.preview-text-overlay img {
+  max-width: 100%;
+  max-height: 120px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .preview-question{
-  font-size:16px;font-weight:600;margin-bottom:16px;
-  text-align:center
+  font-size:16px;font-weight:600;margin-bottom:16px;
+  text-align:center
 }
 .preview-choices{
-  display:flex;flex-direction:column;gap:8px;
-  width:100%;max-width:400px;margin:0 auto
+  display:flex;flex-direction:column;gap:8px;
+  width:100%;max-width:400px;margin:0 auto
 }
 .preview-choice{
-  background:var(--surface);border:2px solid var(--border);
-  padding:12px 16px;border-radius:8px;cursor:pointer;
-  transition:all 0.2s;text-align:center;font-size:14px
+  background:var(--surface);border:2px solid var(--border);
+  padding:12px 16px;border-radius:8px;cursor:pointer;
+  transition:all 0.2s;text-align:center;font-size:14px
 }
 .preview-choice:hover{
-  background:#f6f8fa;border-color:var(--accent);
-  transform:translateY(-2px);box-shadow:var(--shadow)
+  background:#f6f8fa;border-color:var(--accent);
+  transform:translateY(-2px);box-shadow:var(--shadow)
 }
 .preview-choice.correct{border-color:var(--green);background:#f0fdf4}
 .preview-choice.incorrect{border-color:var(--red);background:#fef2f2}
 .preview-nav{
-  padding:20px;border-top:1px solid var(--border);
-  display:flex;justify-content:center;gap:12px
+  padding:20px;border-top:1px solid var(--border);
+  display:flex;justify-content:center;gap:12px
 }
 
 /* Choice Builder */
 .choices-list{display:flex;flex-direction:column;gap:8px;margin-top:8px}
 .choice-item{
-  background:#f6f8fa;border:1px solid var(--border);
-  border-radius:6px;padding:10px;display:flex;align-items:center;gap:8px
+  background:#f6f8fa;border:1px solid var(--border);
+  border-radius:6px;padding:10px;display:flex;align-items:center;gap:8px
 }
 .choice-item input[type="checkbox"]{width:auto;margin-right:4px}
 .choice-item input[type="text"]{flex:1}
+.choice-item select{width:auto;min-width:120px}
 .choice-remove{
-  background:var(--red);border:none;color:#fff;
-  padding:4px 8px;border-radius:4px;cursor:pointer;
-  font-size:11px;transition:all 0.2s
+  background:var(--red);border:none;color:#fff;
+  padding:4px 8px;border-radius:4px;cursor:pointer;
+  font-size:11px;transition:all 0.2s;white-space:nowrap
 }
 .choice-remove:hover{background:#b91c1c}
 
 /* Status */
 .status{
-  position:fixed;bottom:20px;left:50%;transform:translateX(-50%);
-  background:var(--text);color:#fff;padding:12px 20px;
-  border-radius:8px;display:none;z-index:1001;box-shadow:var(--shadow-lg)
+  position:fixed;bottom:20px;left:50%;transform:translateX(-50%);
+  background:var(--text);color:#fff;padding:12px 20px;
+  border-radius:8px;display:none;z-index:1001;box-shadow:var(--shadow-lg)
 }
 .status.show{display:block}
 
 /* Asset Counter */
 .asset-counter{
-  background:#f6f8fa;border:1px solid var(--border);
-  border-radius:6px;padding:8px 12px;margin-top:8px;
-  font-size:12px;display:flex;justify-content:space-between
+  background:#f6f8fa;border:1px solid var(--border);
+  border-radius:6px;padding:8px 12px;margin-top:8px;
+  font-size:12px;display:flex;justify-content:space-between
 }
 .asset-count{color:var(--muted)}
 </style>
 </head>
 <body>
 <div class="app">
-  <div class="panel">
-    <div class="panel-header">
-      <h1>🎬 LærbarXR Builder</h1>
-      <input id="projectTitle" placeholder="Enter project title..." value="My 360° Scenario">
-    </div>
-    
-    <div class="panel-tools">
-      <button class="btn secondary mini" onclick="App.preview()">▶ Preview</button>
-      <button class="btn secondary mini" onclick="App.save()">💾 Save</button>
-      <button class="btn secondary mini" onclick="App.load()">📁 Load</button>
-      <input type="file" id="loader" accept=".lxr" style="display:none" onchange="App.loadFile(event)">
-    </div>
-    
-    <div class="panel-content">
-      <div id="inspector" class="inspector"></div>
-      
-      <div id="defaultView">
-        <div class="field-group">
-          <h3>🚀 Quick Start</h3>
-          <p style="font-size:12px;color:var(--muted);margin-bottom:12px;line-height:1.5">
-            Build immersive 360° experiences. Add nodes, connect them, and include any combination of video, images, text, and questions.
-          </p>
-          <button class="btn" style="width:100%" onclick="App.addNode('video')">
-            + Add First Video Node
-          </button>
-        </div>
-        
-        <div class="field-group">
-          <h3>📦 Assets Library</h3>
-          <div class="quick-actions">
-            <input type="file" id="videoFiles" accept="video/mp4" multiple style="display:none" onchange="App.addVideos(event)">
-            <input type="file" id="imageFiles" accept="image/*" multiple style="display:none" onchange="App.addImages(event)">
-            <button class="action-btn" onclick="document.getElementById('videoFiles').click()">📹 Add Videos</button>
-            <button class="action-btn" onclick="document.getElementById('imageFiles').click()">🖼 Add Images</button>
-          </div>
-          <div class="asset-counter">
-            <span class="asset-count">Videos: <strong id="videoCount">0</strong></span>
-            <span class="asset-count">Images: <strong id="imageCount">0</strong></span>
-          </div>
-        </div>
-        
-        <div class="field-group">
-          <h3>📊 Project Stats</h3>
-          <div style="font-size:12px;color:var(--muted);line-height:1.8">
-            Nodes: <strong id="nodeCount">0</strong><br>
-            Connections: <strong id="connectionCount">0</strong>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="panel-footer">
-      <button class="btn success" style="width:100%" onclick="App.export()">
-        📦 Export WebXR Package
-      </button>
-    </div>
-  </div>
-  
-  <div class="canvas-wrap">
-    <div id="canvas" class="canvas"></div>
-    
-    <div class="add-menu">
-      <div id="addOptions" class="add-options">
-        <div class="add-opt" onclick="App.addNode('video')">🎥 Video Node</div>
-        <div class="add-opt" onclick="App.addNode('question')">❓ Question Node</div>
-        <div class="add-opt" onclick="App.addNode('end')">🏁 End Node</div>
-      </div>
-      <button class="add-btn" onclick="App.toggleAddMenu()">+</button>
-    </div>
-  </div>
+  <div class="panel">
+    <div class="panel-header">
+      <h1>🎬 LærbarXR Builder</h1>
+      <input id="projectTitle" placeholder="Enter project title..." value="My 360° Scenario">
+    </div>
+    
+    <div class="panel-tools">
+      <button class="btn secondary mini" onclick="App.preview()">▶ Preview</button>
+      <button class="btn secondary mini" onclick="App.save()">💾 Save</button>
+      <button class="btn secondary mini" onclick="App.load()">📁 Load</button>
+      <input type="file" id="loader" accept=".lxr" style="display:none" onchange="App.loadFile(event)">
+    </div>
+    
+    <div class="panel-content">
+      <div id="inspector" class="inspector"></div>
+      
+      <div id="defaultView">
+        <div class="field-group">
+          <h3>🚀 Quick Start</h3>
+          <p style="font-size:12px;color:var(--muted);margin-bottom:12px;line-height:1.5">
+            Build immersive 360° experiences. Each video can have questions with answer-based navigation and timed text overlays.
+          </p>
+          <button class="btn" style="width:100%" onclick="App.addNode('video')">
+            + Add First Video Node
+          </button>
+        </div>
+        
+        <div class="field-group">
+          <h3>📦 Assets Library</h3>
+          <div class="quick-actions">
+            <input type="file" id="videoFiles" accept="video/mp4" multiple style="display:none" onchange="App.addVideos(event)">
+            <input type="file" id="imageFiles" accept="image/*" multiple style="display:none" onchange="App.addImages(event)">
+            <button class="action-btn" onclick="document.getElementById('videoFiles').click()">📹 Add Videos</button>
+            <button class="action-btn" onclick="document.getElementById('imageFiles').click()">🖼 Add Images</button>
+          </div>
+          <div class="asset-counter">
+            <span class="asset-count">Videos: <strong id="videoCount">0</strong></span>
+            <span class="asset-count">Images: <strong id="imageCount">0</strong></span>
+          </div>
+        </div>
+        
+        <div class="field-group">
+          <h3>📊 Project Stats</h3>
+          <div style="font-size:12px;color:var(--muted);line-height:1.8">
+            Nodes: <strong id="nodeCount">0</strong><br>
+            Connections: <strong id="connectionCount">0</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="panel-footer">
+      <button class="btn success" style="width:100%" onclick="App.export()">
+        📦 Export WebXR Package
+      </button>
+    </div>
+  </div>
+  
+  <div class="canvas-wrap">
+    <div id="canvas" class="canvas"></div>
+    
+    <div class="add-menu">
+      <div id="addOptions" class="add-options">
+        <div class="add-opt" onclick="App.addNode('video')">🎥 Video Node</div>
+        <div class="add-opt" onclick="App.addNode('end')">🏁 End Node</div>
+      </div>
+      <button class="add-btn" onclick="App.toggleAddMenu()">+</button>
+    </div>
+  </div>
 </div>
 
 <!-- Preview Modal -->
 <div class="preview-modal" id="previewModal">
-  <div class="preview-content">
-    <div class="preview-header">
-      <h2 id="previewTitle">Preview</h2>
-      <button class="btn secondary" onclick="App.closePreview()">Close</button>
-    </div>
-    <div class="preview-body" id="previewBody">
-      <!-- Dynamic preview content -->
-    </div>
-    <div class="preview-nav" id="previewNav">
-      <!-- Navigation buttons -->
-    </div>
-  </div>
+  <div class="preview-content">
+    <div class="preview-header">
+      <h2 id="previewTitle">Preview</h2>
+      <button class="btn secondary" onclick="App.closePreview()">Close</button>
+    </div>
+    <div class="preview-body" id="previewBody">
+      <!-- Dynamic preview content -->
+    </div>
+    <div class="preview-nav" id="previewNav">
+      <!-- Navigation buttons -->
+    </div>
+  </div>
 </div>
 
 <div class="status" id="status"></div>
 
 <script>
 const App = {
-  project: {
-    title: "My 360° Scenario",
-    startNode: null,
-    nodes: [],
-    connections: [],
-    assets: { videos: [], images: [] }
-  },
-  
-  selectedNode: null,
-  dragging: null,
-  dragOffset: {x:0, y:0},
-  previewState: {
-    currentNode: null,
-    history: []
-  },
-  
-  init: function() {
-    var self = this;
-    document.getElementById('canvas').addEventListener('click', function(e) {
-      if(e.target.id === 'canvas') self.deselect();
-    });
-    
-    document.getElementById('projectTitle').addEventListener('input', function(e) {
-      self.project.title = e.target.value;
-    });
-    
-    document.addEventListener('keydown', function(e) {
-      if(e.key === 'Delete' && self.selectedNode) {
-        self.deleteNode(self.selectedNode);
-      }
-    });
-    
-    // Start with a video node
-    this.addNode('video', 100, 150);
-    this.updateStats();
-  },
-  
-  addNode: function(type, x, y) {
-    x = x || 100 + Math.random() * 600;
-    y = y || 100 + Math.random() * 400;
-    
-    var node = {
-      id: 'node_' + Date.now() + Math.random().toString(36).substr(2,4),
-      type: type,
-      x: x,
-      y: y,
-      title: type === 'video' ? 'Video Scene' : type === 'question' ? 'Question Point' : 'End Scene',
-      
-      // Content
-      video: null,
-      images: [],
-      text: '',
-      question: '',
-      choices: type === 'question' ? [
-        {id: 'c1', label: 'Option A', correct: true, target: null},
-        {id: 'c2', label: 'Option B', correct: false, target: null}
-      ] : [],
-      
-      duration: 10,
-      cues: [],
-      nextNode: null,
-      outcome: type === 'end' ? 'complete' : null
-    };
-    
-    this.project.nodes.push(node);
-    if(!this.project.startNode) this.project.startNode = node.id;
-    
-    this.createNodeElement(node);
-    this.updateCanvas();
-    this.updateStats();
-    return node;
-  },
-  
-  createNodeElement: function(node) {
-    var el = document.createElement('div');
-    el.className = 'node';
-    if(this.project.startNode === node.id) el.className += ' start';
-    el.id = node.id;
-    el.style.left = node.x + 'px';
-    el.style.top = node.y + 'px';
-    
-    var thumb = '';
-    if(node.video) {
-      var asset = this.project.assets.videos.find(function(v) { return v.id === node.video; });
-      if(asset && asset.thumb) {
-        thumb = '<div class="node-thumb" style="background-image:url(\'' + asset.thumb + '\')"></div>';
-      }
-    }
-    
-    var icons = [];
-    if(node.video) icons.push('🎬');
-    if(node.images.length) icons.push('🖼');
-    if(node.text) icons.push('📝');
-    if(node.question || node.choices.length) icons.push('❓');
-    
-    var iconsHtml = icons.length ? '<div class="node-icons">' + icons.join(' ') + '</div>' : '';
-    var badge = this.project.startNode === node.id ? '<div class="node-badge">START</div>' : '';
-    
-    el.innerHTML = thumb +
-      '<div class="node-content">' +
-        '<div class="node-title">' + node.title + '</div>' +
-        '<div class="node-type">' + node.type.toUpperCase() + '</div>' +
-        iconsHtml +
-      '</div>' +
-      badge;
-    
-    var self = this;
-    el.addEventListener('mousedown', function(e) { self.startDrag(e, node); });
-    el.addEventListener('click', function(e) {
-      e.stopPropagation();
-      self.selectNode(node);
-    });
-    
-    document.getElementById('canvas').appendChild(el);
-  },
-  
-  selectNode: function(node) {
-    var nodes = document.querySelectorAll('.node');
-    for(var i = 0; i < nodes.length; i++) {
-      nodes[i].classList.remove('selected');
-    }
-    document.getElementById(node.id).classList.add('selected');
-    this.selectedNode = node;
-    this.showInspector(node);
-  },
-  
-  deselect: function() {
-    var nodes = document.querySelectorAll('.node');
-    for(var i = 0; i < nodes.length; i++) {
-      nodes[i].classList.remove('selected');
-    }
-    this.selectedNode = null;
-    document.getElementById('inspector').classList.remove('active');
-    document.getElementById('defaultView').style.display = 'block';
-  },
-  
-  showInspector: function(node) {
-    var inspector = document.getElementById('inspector');
-    document.getElementById('defaultView').style.display = 'none';
-    
-    var html = '<div class="field-group">';
-    html += '<h3>📝 ' + node.type.charAt(0).toUpperCase() + node.type.slice(1) + ' Properties</h3>';
-    html += '<label>Title</label>';
-    html += '<input value="' + node.title + '" onchange="App.updateNode(\'title\', this.value)">';
-    
-    if(node.type !== 'end') {
-      html += '<label>Duration (seconds)</label>';
-      html += '<input type="number" value="' + node.duration + '" onchange="App.updateNode(\'duration\', this.value)">';
-    }
-    html += '</div>';
-    
-    if(node.type !== 'end') {
-      html += '<div class="field-group">';
-      html += '<h3>🎨 Media & Content</h3>';
-      
-      html += '<label>360° Video</label>';
-      html += '<select onchange="App.updateNode(\'video\', this.value)">';
-      html += '<option value="">No video</option>';
-      for(var i = 0; i < this.project.assets.videos.length; i++) {
-        var v = this.project.assets.videos[i];
-        html += '<option value="' + v.id + '"' + (node.video === v.id ? ' selected' : '') + '>' + v.name + '</option>';
-      }
-      html += '</select>';
-      
-      html += '<label style="margin-top:12px">Overlay Images</label>';
-      html += '<div class="media-grid">';
-      for(var j = 0; j < this.project.assets.images.length; j++) {
-        var img = this.project.assets.images[j];
-        var selected = node.images.indexOf(img.id) >= 0 ? ' selected' : '';
-        html += '<div class="media-item' + selected + '" onclick="App.toggleImage(\'' + img.id + '\')">';
-        html += '<img src="' + img.url + '">';
-        html += '</div>';
-      }
-      html += '</div>';
-      
-      html += '<label style="margin-top:12px">Text Content</label>';
-      html += '<textarea rows="3" placeholder="Add descriptive text..." onchange="App.updateNode(\'text\', this.value)">' + (node.text || '') + '</textarea>';
-      
-      html += '<label style="margin-top:12px">Question</label>';
-      html += '<textarea rows="2" placeholder="Ask a question..." onchange="App.updateNode(\'question\', this.value)">' + (node.question || '') + '</textarea>';
-      html += '</div>';
-    }
-    
-    if(node.question || node.type === 'question') {
-      html += '<div class="field-group">';
-      html += '<h3>✅ Answer Choices</h3>';
-      html += '<div class="choices-list">';
-      
-      for(var k = 0; k < node.choices.length; k++) {
-        var c = node.choices[k];
-        html += '<div class="choice-item">';
-        html += '<input type="checkbox" title="Correct answer"' + (c.correct ? ' checked' : '') + 
-                ' onchange="App.updateChoice(' + k + ', \'correct\', this.checked)">';
-        html += '<input type="text" value="' + c.label + '" placeholder="Choice text..." ' +
-                'onchange="App.updateChoice(' + k + ', \'label\', this.value)">';
-        html += '<select title="Navigate to" onchange="App.updateChoice(' + k + ', \'target\', this.value)">';
-        html += '<option value="">→ Default</option>';
-        for(var m = 0; m < this.project.nodes.length; m++) {
-          var n = this.project.nodes[m];
-          if(n.id !== node.id) {
-            html += '<option value="' + n.id + '"' + (c.target === n.id ? ' selected' : '') + '>' + n.title + '</option>';
-          }
-        }
-        html += '</select>';
-        html += '<button class="choice-remove" onclick="App.removeChoice(' + k + ')">×</button>';
-        html += '</div>';
-      }
-      
-      html += '</div>';
-      html += '<button class="btn secondary mini" style="width:100%" onclick="App.addChoice()">+ Add Choice</button>';
-      html += '</div>';
-    }
-    
-    if(node.type !== 'end') {
-      html += '<div class="field-group">';
-      html += '<h3>🔄 Default Navigation</h3>';
-      html += '<label>Next Node (if no choice selected)</label>';
-      html += '<select onchange="App.updateNode(\'nextNode\', this.value)">';
-      html += '<option value="">None</option>';
-      for(var q = 0; q < this.project.nodes.length; q++) {
-        var nav = this.project.nodes[q];
-        if(nav.id !== node.id) {
-          html += '<option value="' + nav.id + '"' + (node.nextNode === nav.id ? ' selected' : '') + '>' + nav.title + '</option>';
-        }
-      }
-      html += '</select>';
-      html += '</div>';
-    }
-    
-    html += '<div class="field-group">';
-    html += '<h3>⚡ Actions</h3>';
-    html += '<div class="quick-actions">';
-    html += '<button class="action-btn" onclick="App.duplicateNode()">📋 Duplicate</button>';
-    html += '<button class="action-btn" onclick="App.deleteNode()" style="color:var(--red)">🗑 Delete</button>';
-    if(this.project.startNode !== node.id) {
-      html += '<button class="action-btn" onclick="App.setStart()">🚀 Set Start</button>';
-    }
-    html += '</div>';
-    html += '</div>';
-    
-    inspector.innerHTML = html;
-    inspector.classList.add('active');
-  },
-  
-  updateNode: function(prop, value) {
-    if(!this.selectedNode) return;
-    this.selectedNode[prop] = prop === 'duration' ? parseInt(value) : value;
-    this.updateNodeElement(this.selectedNode);
-    this.updateCanvas();
-  },
-  
-  toggleImage: function(imgId) {
-    if(!this.selectedNode) return;
-    var idx = this.selectedNode.images.indexOf(imgId);
-    if(idx >= 0) {
-      this.selectedNode.images.splice(idx, 1);
-    } else {
-      this.selectedNode.images.push(imgId);
-    }
-    this.showInspector(this.selectedNode);
-    this.updateNodeElement(this.selectedNode);
-  },
-  
-  updateChoice: function(idx, prop, value) {
-    if(!this.selectedNode || !this.selectedNode.choices[idx]) return;
-    this.selectedNode.choices[idx][prop] = prop === 'correct' ? value : value;
-    this.updateCanvas();
-  },
-  
-  addChoice: function() {
-    if(!this.selectedNode) return;
-    if(!this.selectedNode.choices) this.selectedNode.choices = [];
-    this.selectedNode.choices.push({
-      id: 'c' + Date.now(),
-      label: 'New Option',
-      correct: false,
-      target: null
-    });
-    this.showInspector(this.selectedNode);
-  },
-  
-  removeChoice: function(idx) {
-    if(!this.selectedNode || !this.selectedNode.choices) return;
-    this.selectedNode.choices.splice(idx, 1);
-    this.showInspector(this.selectedNode);
-  },
-  
-  updateNodeElement: function(node) {
-    var old = document.getElementById(node.id);
-    if(old) old.remove();
-    this.createNodeElement(node);
-    if(this.selectedNode && this.selectedNode.id === node.id) {
-      document.getElementById(node.id).classList.add('selected');
-    }
-  },
-  
-  deleteNode: function() {
-    if(!this.selectedNode) return;
-    var id = this.selectedNode.id;
-    
-    this.project.nodes = this.project.nodes.filter(function(n) { return n.id !== id; });
-    this.project.nodes.forEach(function(n) {
-      if(n.nextNode === id) n.nextNode = null;
-      if(n.choices) {
-        n.choices.forEach(function(c) {
-          if(c.target === id) c.target = null;
-        });
-      }
-    });
-    
-    var el = document.getElementById(id);
-    if(el) el.remove();
-    
-    if(this.project.startNode === id) {
-      this.project.startNode = this.project.nodes[0] ? this.project.nodes[0].id : null;
-    }
-    
-    this.deselect();
-    this.updateCanvas();
-    this.updateStats();
-  },
-  
-  setStart: function() {
-    if(!this.selectedNode) return;
-    this.project.startNode = this.selectedNode.id;
-    var nodes = document.querySelectorAll('.node');
-    for(var i = 0; i < nodes.length; i++) {
-      nodes[i].classList.remove('start');
-    }
-    document.getElementById(this.selectedNode.id).classList.add('start');
-    this.showInspector(this.selectedNode);
-  },
-  
-  duplicateNode: function() {
-    if(!this.selectedNode) return;
-    var copy = JSON.parse(JSON.stringify(this.selectedNode));
-    copy.id = 'node_' + Date.now() + Math.random().toString(36).substr(2,4);
-    copy.x += 60;
-    copy.y += 60;
-    copy.title += ' (Copy)';
-    this.project.nodes.push(copy);
-    this.createNodeElement(copy);
-    this.updateCanvas();
-    this.updateStats();
-  },
-  
-  startDrag: function(e, node) {
-    e.preventDefault();
-    this.dragging = node;
-    var rect = e.target.getBoundingClientRect();
-    this.dragOffset = {
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top
-    };
-    
-    var self = this;
-    var moveHandler = function(e) { self.onDrag(e); };
-    var upHandler = function() {
-      self.dragging = null;
-      document.removeEventListener('mousemove', moveHandler);
-      document.removeEventListener('mouseup', upHandler);
-    };
-    
-    document.addEventListener('mousemove', moveHandler);
-    document.addEventListener('mouseup', upHandler);
-  },
-  
-  onDrag: function(e) {
-    if(!this.dragging) return;
-    var canvas = document.getElementById('canvas').getBoundingClientRect();
-    this.dragging.x = e.clientX - canvas.left - this.dragOffset.x;
-    this.dragging.y = e.clientY - canvas.top - this.dragOffset.y;
-    
-    var el = document.getElementById(this.dragging.id);
-    el.style.left = this.dragging.x + 'px';
-    el.style.top = this.dragging.y + 'px';
-    
-    this.updateCanvas();
-  },
-  
-  updateCanvas: function() {
-    var oldConns = document.querySelectorAll('.connection');
-    for(var i = 0; i < oldConns.length; i++) {
-      oldConns[i].remove();
-    }
-    
-    var self = this;
-    var connectionCount = 0;
-    
-    this.project.nodes.forEach(function(node) {
-      if(node.nextNode) {
-        self.drawConnection(node.id, node.nextNode, 'default');
-        connectionCount++;
-      }
-      
-      if(node.choices) {
-        node.choices.forEach(function(choice) {
-          if(choice.target) {
-            self.drawConnection(node.id, choice.target, 
-                              choice.correct ? 'correct' : 'incorrect');
-            connectionCount++;
-          }
-        });
-      }
-    });
-    
-    document.getElementById('connectionCount').textContent = connectionCount;
-  },
-  
-  drawConnection: function(fromId, toId, type) {
-    var from = document.getElementById(fromId);
-    var to = document.getElementById(toId);
-    if(!from || !to) return;
-    
-    var canvas = document.getElementById('canvas');
-    var rect = canvas.getBoundingClientRect();
-    
-    var fromRect = from.getBoundingClientRect();
-    var toRect = to.getBoundingClientRect();
-    
-    var x1 = fromRect.left - rect.left + fromRect.width/2;
-    var y1 = fromRect.top - rect.top + fromRect.height/2;
-    var x2 = toRect.left - rect.left + toRect.width/2;
-    var y2 = toRect.top - rect.top + toRect.height/2;
-    
-    var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    svg.className = 'connection ' + type;
-    svg.style.position = 'absolute';
-    svg.style.left = '0';
-    svg.style.top = '0';
-    svg.style.width = '100%';
-    svg.style.height = '100%';
-    
-    var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-    var mx = (x1 + x2) / 2;
-    var my = (y1 + y2) / 2;
-    var d = 'M ' + x1 + ' ' + y1 + ' Q ' + mx + ' ' + y1 + ', ' + mx + ' ' + my + ' T ' + x2 + ' ' + y2;
-    path.setAttribute('d', d);
-    
-    svg.appendChild(path);
-    canvas.appendChild(svg);
-  },
-  
-  addVideos: function(e) {
-    var self = this;
-    var files = Array.from(e.target.files);
-    
-    files.forEach(function(file) {
-      var url = URL.createObjectURL(file);
-      self.generateThumb(url).then(function(thumb) {
-        self.project.assets.videos.push({
-          id: 'v' + Date.now() + Math.random().toString(36).substr(2,4),
-          name: file.name,
-          file: file,
-          url: url,
-          thumb: thumb
-        });
-        self.updateAssetCount();
-      });
-    });
-    
-    this.showStatus('Added ' + files.length + ' video(s)');
-  },
-  
-  addImages: function(e) {
-    var files = Array.from(e.target.files);
-    var self = this;
-    
-    files.forEach(function(file) {
-      var url = URL.createObjectURL(file);
-      self.project.assets.images.push({
-        id: 'i' + Date.now() + Math.random().toString(36).substr(2,4),
-        name: file.name,
-        file: file,
-        url: url
-      });
-    });
-    
-    this.updateAssetCount();
-    this.showStatus('Added ' + files.length + ' image(s)');
-  },
-  
-  generateThumb: function(videoUrl) {
-    return new Promise(function(resolve) {
-      var video = document.createElement('video');
-      video.src = videoUrl;
-      video.currentTime = 1;
-      video.addEventListener('loadeddata', function() {
-        var canvas = document.createElement('canvas');
-        canvas.width = 320;
-        canvas.height = 180;
-        var ctx = canvas.getContext('2d');
-        ctx.drawImage(video, 0, 0, 320, 180);
-        resolve(canvas.toDataURL('image/jpeg', 0.5));
-      });
-      video.addEventListener('error', function() {
-        resolve(null);
-      });
-    });
-  },
-  
-  updateAssetCount: function() {
-    document.getElementById('videoCount').textContent = this.project.assets.videos.length;
-    document.getElementById('imageCount').textContent = this.project.assets.images.length;
-  },
-  
-  updateStats: function() {
-    document.getElementById('nodeCount').textContent = this.project.nodes.length;
-    this.updateAssetCount();
-  },
-  
-  toggleAddMenu: function() {
-    var opts = document.getElementById('addOptions');
-    opts.classList.toggle('show');
-  },
-  
-  showStatus: function(msg) {
-    var status = document.getElementById('status');
-    status.textContent = msg;
-    status.classList.add('show');
-    setTimeout(function() { status.classList.remove('show'); }, 3000);
-  },
-  
-  // Preview System
-  preview: function() {
-    var startNode = this.project.nodes.find(function(n) { 
-      return n.id === App.project.startNode; 
-    });
-    
-    if(!startNode) {
-      this.showStatus('Please set a start node first');
-      return;
-    }
-    
-    this.previewState = {
-      currentNode: startNode,
-      history: []
-    };
-    
-    document.getElementById('previewModal').classList.add('show');
-    document.getElementById('previewTitle').textContent = 'Preview: ' + this.project.title;
-    this.renderPreviewNode(startNode);
-  },
-  
-  renderPreviewNode: function(node) {
-    var body = document.getElementById('previewBody');
-    var nav = document.getElementById('previewNav');
-    var self = this;
-    
-    var html = '';
-    
-    // Video
-    if(node.video) {
-      var videoAsset = this.project.assets.videos.find(function(v) { 
-        return v.id === node.video; 
-      });
-      if(videoAsset) {
-        html += '<video class="preview-video" controls autoplay>';
-        html += '<source src="' + videoAsset.url + '" type="video/mp4">';
-        html += '</video>';
-      }
-    }
-    
-    html += '<div class="preview-content-section">';
-    
-    // Images
-    if(node.images && node.images.length) {
-      html += '<div class="preview-images">';
-      for(var i = 0; i < node.images.length; i++) {
-        var imgAsset = this.project.assets.images.find(function(img) {
-          return img.id === node.images[i];
-        });
-        if(imgAsset) {
-          html += '<img src="' + imgAsset.url + '">';
-        }
-      }
-      html += '</div>';
-    }
-    
-    // Text
-    if(node.text) {
-      html += '<div class="preview-text">' + node.text + '</div>';
-    }
-    
-    // Question
-    if(node.question) {
-      html += '<div class="preview-question">' + node.question + '</div>';
-    }
-    
-    // Choices
-    if(node.choices && node.choices.length) {
-      html += '<div class="preview-choices">';
-      for(var j = 0; j < node.choices.length; j++) {
-        var choice = node.choices[j];
-        html += '<div class="preview-choice" data-choice-idx="' + j + '">';
-        html += choice.label;
-        html += '</div>';
-      }
-      html += '</div>';
-    }
-    
-    html += '</div>';
-    
-    body.innerHTML = html;
-    
-    // Add choice click handlers
-    var choiceEls = body.querySelectorAll('.preview-choice');
-    for(var k = 0; k < choiceEls.length; k++) {
-      choiceEls[k].addEventListener('click', function(e) {
-        var idx = parseInt(e.target.getAttribute('data-choice-idx'));
-        self.handlePreviewChoice(node, idx);
-      });
-    }
-    
-    // Navigation buttons
-    var navHtml = '';
-    
-    if(this.previewState.history.length > 0) {
-      navHtml += '<button class="btn secondary" onclick="App.previewBack()">← Back</button>';
-    }
-    
-    if(node.type === 'end') {
-      navHtml += '<button class="btn" onclick="App.restartPreview()">Restart</button>';
-    } else if(!node.choices || node.choices.length === 0) {
-      if(node.nextNode) {
-        navHtml += '<button class="btn" onclick="App.previewNext()">Continue →</button>';
-      }
-    }
-    
-    nav.innerHTML = navHtml;
-  },
-  
-  handlePreviewChoice: function(node, idx) {
-    var choice = node.choices[idx];
-    var choiceEls = document.querySelectorAll('.preview-choice');
-    
-    // Show correct/incorrect
-    for(var i = 0; i < choiceEls.length; i++) {
-      if(i === idx) {
-        choiceEls[i].classList.add(choice.correct ? 'correct' : 'incorrect');
-      }
-    }
-    
-    // Navigate after delay
-    var self = this;
-    setTimeout(function() {
-      self.previewState.history.push(node.id);
-      
-      var nextId = choice.target || node.nextNode;
-      if(nextId) {
-        var nextNode = self.project.nodes.find(function(n) { 
-          return n.id === nextId; 
-        });
-        if(nextNode) {
-          self.previewState.currentNode = nextNode;
-          self.renderPreviewNode(nextNode);
-        } else {
-          self.closePreview();
-        }
-      } else {
-        self.closePreview();
-      }
-    }, 1000);
-  },
-  
-  previewNext: function() {
-    if(!this.previewState.currentNode || !this.previewState.currentNode.nextNode) return;
-    
-    this.previewState.history.push(this.previewState.currentNode.id);
-    var nextNode = this.project.nodes.find(function(n) { 
-      return n.id === App.previewState.currentNode.nextNode; 
-    });
-    
-    if(nextNode) {
-      this.previewState.currentNode = nextNode;
-      this.renderPreviewNode(nextNode);
-    }
-  },
-  
-  previewBack: function() {
-    if(this.previewState.history.length === 0) return;
-    
-    var prevId = this.previewState.history.pop();
-    var prevNode = this.project.nodes.find(function(n) { 
-      return n.id === prevId; 
-    });
-    
-    if(prevNode) {
-      this.previewState.currentNode = prevNode;
-      this.renderPreviewNode(prevNode);
-    }
-  },
-  
-  restartPreview: function() {
-    var startNode = this.project.nodes.find(function(n) { 
-      return n.id === App.project.startNode; 
-    });
-    
-    if(startNode) {
-      this.previewState = {
-        currentNode: startNode,
-        history: []
-      };
-      this.renderPreviewNode(startNode);
-    }
-  },
-  
-  closePreview: function() {
-    document.getElementById('previewModal').classList.remove('show');
-    
-    // Pause any playing videos
-    var videos = document.querySelectorAll('.preview-video');
-    for(var i = 0; i < videos.length; i++) {
-      videos[i].pause();
-    }
-  },
-  
-  save: function() {
-    var data = JSON.stringify(this.project, null, 2);
-    var blob = new Blob([data], {type: 'application/json'});
-    var a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = this.project.title.replace(/[^a-z0-9]/gi, '_') + '.lxr';
-    a.click();
-    this.showStatus('Project saved');
-  },
-  
-  load: function() {
-    document.getElementById('loader').click();
-  },
-  
-  loadFile: function(e) {
-    var file = e.target.files[0];
-    if(!file) return;
-    
-    var self = this;
-    var reader = new FileReader();
-    reader.onload = function(e) {
-      try {
-        self.project = JSON.parse(e.target.result);
-        document.getElementById('projectTitle').value = self.project.title;
-        
-        document.getElementById('canvas').innerHTML = '';
-        self.project.nodes.forEach(function(node) {
-          self.createNodeElement(node);
-        });
-        self.updateCanvas();
-        self.updateStats();
-        self.deselect();
-        self.showStatus('Project loaded');
-      } catch(err) {
-        alert('Invalid project file');
-      }
-    };
-    reader.readAsText(file);
-  },
-  
-  export: function() {
-    var self = this;
-    var zip = new JSZip();
-    
-    var html = this.generateWebXR();
-    zip.file('index.html', html);
-    
-    var assetsFolder = zip.folder('assets');
-    this.project.assets.videos.forEach(function(video) {
-      if(video.file) assetsFolder.file(video.name, video.file);
-    });
-    this.project.assets.images.forEach(function(img) {
-      if(img.file) assetsFolder.file(img.name, img.file);
-    });
-    
-    zip.generateAsync({type: 'blob'}).then(function(blob) {
-      var a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = self.project.title.replace(/[^a-z0-9]/gi, '_') + '_webxr.zip';
-      a.click();
-      self.showStatus('WebXR package exported');
-    });
-  },
-  
-  generateWebXR: function() {
-    var videoAssets = this.project.assets.videos.map(function(v) {
-      return '<video id="' + v.id + '" src="assets/' + v.name + '" crossorigin></video>';
-    }).join('\n      ');
-    
-    var imageAssets = this.project.assets.images.map(function(i) {
-      return '<img id="' + i.id + '" src="assets/' + i.name + '" crossorigin>';
-    }).join('\n      ');
-    
-    return '<!DOCTYPE html>\n' +
-      '<html>\n' +
-      '<head>\n' +
-      '  <meta charset="utf-8">\n' +
-      '  <title>' + this.project.title + '</title>\n' +
-      '  <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></' + 'script>\n' +
-      '</head>\n' +
-      '<body>\n' +
-      '  <a-scene>\n' +
-      '    <a-assets>\n' +
-      '      ' + videoAssets + '\n' +
-      '      ' + imageAssets + '\n' +
-      '    </a-assets>\n' +
-      '    \n' +
-      '    <a-sky id="sky"></a-sky>\n' +
-      '    <a-camera>\n' +
-      '      <a-cursor></a-cursor>\n' +
-      '    </a-camera>\n' +
-      '    \n' +
-      '    <script>\n' +
-      '      const flow = ' + JSON.stringify(this.project) + ';\n' +
-      '      console.log("LærbarXR Scene Loaded", flow);\n' +
-      '    </' + 'script>\n' +
-      '  </a-scene>\n' +
-      '</body>\n' +
-      '</html>';
-  }
+  project: {
+    title: "My 360° Scenario",
+    startNode: null,
+    nodes: [],
+    connections: [],
+    assets: { videos: [], images: [] }
+  },
+  
+  selectedNode: null,
+  dragging: null,
+  dragOffset: {x:0, y:0},
+  previewState: {
+    currentNode: null,
+    history: [],
+    videoTime: 0,
+    overlayTimer: null,
+    videoTimeUpdater: null // For tracking video timeupdate listener
+  },
+  
+  init: function() {
+    var self = this;
+    document.getElementById('canvas').addEventListener('click', function(e) {
+      if(e.target.id === 'canvas') self.deselect();
+    });
+    
+    document.getElementById('projectTitle').addEventListener('input', function(e) {
+      self.project.title = e.target.value;
+    });
+    
+    document.addEventListener('keydown', function(e) {
+      if(e.key === 'Delete' && self.selectedNode) {
+        self.deleteNode(self.selectedNode);
+      }
+    });
+    
+    // Start with a video node
+    this.addNode('video', 100, 150);
+    this.updateStats();
+  },
+  
+  addNode: function(type, x, y) {
+    x = x || 100 + Math.random() * 600;
+    y = y || 100 + Math.random() * 400;
+    
+    var node = {
+      id: 'node_' + Date.now() + Math.random().toString(36).substr(2,4),
+      type: type,
+      x: x,
+      y: y,
+      title: type === 'video' ? 'Video Scene' : 'End Scene',
+      
+      // Content
+      video: null,
+      images: [],
+      textOverlays: [], // Array of {time, duration, text, color, image}
+      question: '',
+      choices: [], // Answer choices with navigation
+      
+      duration: 10,
+      defaultNext: null, // Default next node if no question/choice
+      outcome: type === 'end' ? 'complete' : null
+    };
+    
+    this.project.nodes.push(node);
+    if(!this.project.startNode) this.project.startNode = node.id;
+    
+    this.createNodeElement(node);
+    this.updateCanvas();
+    this.updateStats();
+    return node;
+  },
+  
+  createNodeElement: function(node) {
+    var el = document.createElement('div');
+    el.className = 'node';
+    if(this.project.startNode === node.id) el.className += ' start';
+    el.id = node.id;
+    el.style.left = node.x + 'px';
+    el.style.top = node.y + 'px';
+    
+    var thumb = '';
+    if(node.video) {
+      var asset = this.project.assets.videos.find(function(v) { return v.id === node.video; });
+      if(asset && asset.thumb) {
+        thumb = '<div class="node-thumb" style="background-image:url(\'' + asset.thumb + '\')"></div>';
+      }
+    }
+    
+    var icons = [];
+    if(node.video) icons.push('🎬');
+    if(node.images.length) icons.push('🖼');
+    if(node.textOverlays && node.textOverlays.length) icons.push('📝');
+    if(node.question || node.choices.length) icons.push('❓');
+    
+    var iconsHtml = icons.length ? '<div class="node-icons">' + icons.join(' ') + '</div>' : '';
+    var badge = this.project.startNode === node.id ? '<div class="node-badge">START</div>' : '';
+    
+    el.innerHTML = thumb +
+      '<div class="node-content">' +
+        '<div class="node-title">' + node.title + '</div>' +
+        '<div class="node-type">' + node.type.toUpperCase() + '</div>' +
+        iconsHtml +
+      '</div>' +
+      badge;
+    
+    var self = this;
+    el.addEventListener('mousedown', function(e) { self.startDrag(e, node); });
+    el.addEventListener('click', function(e) {
+      e.stopPropagation();
+      self.selectNode(node);
+    });
+    
+    document.getElementById('canvas').appendChild(el);
+  },
+  
+  selectNode: function(node) {
+    var nodes = document.querySelectorAll('.node');
+    for(var i = 0; i < nodes.length; i++) {
+      nodes[i].classList.remove('selected');
+    }
+    document.getElementById(node.id).classList.add('selected');
+    this.selectedNode = node;
+    this.showInspector(node);
+  },
+  
+  deselect: function() {
+    var nodes = document.querySelectorAll('.node');
+    for(var i = 0; i < nodes.length; i++) {
+      nodes[i].classList.remove('selected');
+    }
+    this.selectedNode = null;
+    document.getElementById('inspector').classList.remove('active');
+    document.getElementById('defaultView').style.display = 'block';
+  },
+  
+  showInspector: function(node) {
+    var inspector = document.getElementById('inspector');
+    document.getElementById('defaultView').style.display = 'none';
+    
+    var html = '<div class="field-group">';
+    html += '<h3>📝 ' + node.type.charAt(0).toUpperCase() + node.type.slice(1) + ' Properties</h3>';
+    html += '<label>Title</label>';
+    html += '<input value="' + node.title + '" onchange="App.updateNode(\'title\', this.value)">';
+    
+    if(node.type !== 'end') {
+      html += '<label>Duration (seconds)</label>';
+      html += '<input type="number" value="' + node.duration + '" onchange="App.updateNode(\'duration\', this.value)">';
+    }
+    html += '</div>';
+    
+    if(node.type !== 'end') {
+      // Media Section
+      html += '<div class="field-group">';
+      html += '<h3>🎨 Media</h3>';
+      
+      html += '<label>360° Video</label>';
+      html += '<select onchange="App.updateNode(\'video\', this.value)">';
+      html += '<option value="">No video</option>';
+      for(var i = 0; i < this.project.assets.videos.length; i++) {
+        var v = this.project.assets.videos[i];
+        html += '<option value="' + v.id + '"' + (node.video === v.id ? ' selected' : '') + '>' + v.name + '</option>';
+      }
+      html += '</select>';
+      
+      html += '<label style="margin-top:12px">Overlay Images</label>';
+      html += '<div class="media-grid">';
+      for(var j = 0; j < this.project.assets.images.length; j++) {
+        var img = this.project.assets.images[j];
+        var selected = node.images.indexOf(img.id) >= 0 ? ' selected' : '';
+        html += '<div class="media-item' + selected + '" onclick="App.toggleImage(\'' + img.id + '\')">';
+        html += '<img src="' + img.url + '">';
+        html += '</div>';
+      }
+      html += '</div>';
+      html += '</div>';
+      
+      // Text Overlays Section
+      html += '<div class="field-group">';
+      html += '<h3>📱 Text Overlays</h3>';
+      html += '<div class="text-overlays">';
+      
+      if(node.textOverlays) {
+        for(var t = 0; t < node.textOverlays.length; t++) {
+          var overlay = node.textOverlays[t];
+          html += '<div class="text-overlay-item">';
+          html += '<textarea rows="2" placeholder="Text content..." onchange="App.updateTextOverlay(' + t + ', \'text\', this.value)">' + (overlay.text || '') + '</textarea>';
+          
+          // Time controls
+          html += '<div class="text-overlay-controls" style="margin-top:8px;">';
+          html += '<label style="margin:0">Time:</label>';
+          html += '<input type="number" value="' + (overlay.time || 0) + '" min="0" step="0.5" onchange="App.updateTextOverlay(' + t + ', \'time\', this.value)" style="width:70px"> sec';
+          html += '<label style="margin:0; margin-left:8px;">Dur:</label>';
+          html += '<input type="number" value="' + (overlay.duration || 3) + '" min="0.5" step="0.5" onchange="App.updateTextOverlay(' + t + ', \'duration\', this.value)" style="width:60px"> sec';
+          html += '</div>';
+          
+          // Image and Style controls
+          html += '<div class="text-overlay-controls" style="margin-top:8px;">';
+          html += '<label style="margin:0">Img:</label>';
+          html += '<select onchange="App.updateTextOverlay(' + t + ', \'image\', this.value)" style="flex:1;min-width:80px;width:auto;">';
+          html += '<option value="">None</option>';
+          for(var imgIdx = 0; imgIdx < this.project.assets.images.length; imgIdx++) {
+              var imgAsset = this.project.assets.images[imgIdx];
+              html += '<option value="' + imgAsset.id + '"' + (overlay.image === imgAsset.id ? ' selected' : '') + '>' + imgAsset.name + '</option>';
+          }
+          html += '</select>';
+          html += '<select onchange="App.updateTextOverlay(' + t + ', \'color\', this.value)" style="width:auto;margin-left:8px;">';
+          html += '<option value="#424242"' + (overlay.color === '#424242' ? ' selected' : '') + '>Dark</option>';
+          html += '<option value="#FF5252"' + (overlay.color === '#FF5252' ? ' selected' : '') + '>Red</option>';
+          html += '<option value="#448AFF"' + (overlay.color === '#448AFF' ? ' selected' : '') + '>Blue</option>';
+          html += '<option value="#69F0AE"' + (overlay.color === '#69F0AE' ? ' selected' : '') + '>Green</option>';
+          html += '<option value="#FFD740"' + (overlay.color === '#FFD740' ? ' selected' : '') + '>Yellow</option>';
+          html += '<option value="#E040FB"' + (overlay.color === '#E040FB' ? ' selected' : '') + '>Purple</option>';
+          html += '<option value="#FF6E40"' + (overlay.color === '#FF6E40' ? ' selected' : '') + '>Orange</option>';
+          html += '</select>';
+          html += '<div class="color-preview" style="background:' + (overlay.color || '#424242') + '"></div>';
+          html += '<button class="text-overlay-remove" onclick="App.removeTextOverlay(' + t + ')" style="margin-left:8px;">×</button>';
+          html += '</div>'; // close text-overlay-controls
+          
+          html += '</div>'; // close text-overlay-item
+        }
+      }
+      
+      html += '</div>';
+      html += '<button class="btn secondary mini" style="width:100%" onclick="App.addTextOverlay()">+ Add Text Overlay</button>';
+      html += '</div>';
+      
+      // Question Section
+      html += '<div class="field-group">';
+      html += '<h3>❓ Question & Navigation</h3>';
+      html += '<label>Question (optional)</label>';
+      html += '<textarea rows="3" placeholder="Ask a question to show answer choices..." onchange="App.updateNode(\'question\', this.value)">' + (node.question || '') + '</textarea>';
+      
+      if(node.question) {
+        html += '<label style="margin-top:12px">Answer Choices</label>';
+        html += '<div class="choices-list">';
+        
+        for(var k = 0; k < node.choices.length; k++) {
+          var c = node.choices[k];
+          html += '<div class="choice-item">';
+          html += '<input type="checkbox" title="Correct answer"' + (c.correct ? ' checked' : '') + 
+                  ' onchange="App.updateChoice(' + k + ', \'correct\', this.checked)">';
+          html += '<input type="text" value="' + c.label + '" placeholder="Answer text..." ' +
+                  'onchange="App.updateChoice(' + k + ', \'label\', this.value)">';
+          html += '<select title="Navigate to" onchange="App.updateChoice(' + k + ', \'target\', this.value)">';
+          html += '<option value="">→ Default</option>';
+          for(var m = 0; m < this.project.nodes.length; m++) {
+            var n = this.project.nodes[m];
+            if(n.id !== node.id) {
+              html += '<option value="' + n.id + '"' + (c.target === n.id ? ' selected' : '') + '>' + n.title + '</option>';
+            }
+          }
+          html += '</select>';
+          html += '<button class="choice-remove" onclick="App.removeChoice(' + k + ')">×</button>';
+          html += '</div>';
+        }
+        
+        html += '</div>';
+        html += '<button class="btn secondary mini" style="width:100%" onclick="App.addChoice()">+ Add Choice</button>';
+      }
+      
+      html += '<label style="margin-top:12px">Default Next Node (no question/timeout)</label>';
+      html += '<select onchange="App.updateNode(\'defaultNext\', this.value)">';
+      html += '<option value="">None (End)</option>';
+      for(var q = 0; q < this.project.nodes.length; q++) {
+        var nav = this.project.nodes[q];
+        if(nav.id !== node.id) {
+          html += '<option value="' + nav.id + '"' + (node.defaultNext === nav.id ? ' selected' : '') + '>' + nav.title + '</option>';
+        }
+      }
+      html += '</select>';
+      html += '</div>';
+    }
+    
+    html += '<div class="field-group">';
+    html += '<h3>⚡ Actions</h3>';
+    html += '<div class="quick-actions">';
+    html += '<button class="action-btn" onclick="App.duplicateNode()">📋 Duplicate</button>';
+    html += '<button class="action-btn" onclick="App.deleteNode()" style="color:var(--red)">🗑 Delete</button>';
+    if(this.project.startNode !== node.id) {
+      html += '<button class="action-btn" onclick="App.setStart()">🚀 Set Start</button>';
+    }
+    html += '</div>';
+    html += '</div>';
+    
+    inspector.innerHTML = html;
+    inspector.classList.add('active');
+  },
+  
+  updateNode: function(prop, value) {
+    if(!this.selectedNode) return;
+    this.selectedNode[prop] = prop === 'duration' ? parseInt(value) : value;
+    
+    // If question is set/cleared, ensure choices array exists
+    if(prop === 'question') {
+      if(value && !this.selectedNode.choices) {
+        this.selectedNode.choices = [];
+        // Add two default choices
+        this.selectedNode.choices.push({
+          id: 'c' + Date.now() + '1',
+          label: 'Option A',
+          correct: true,
+          target: null
+        });
+        this.selectedNode.choices.push({
+          id: 'c' + Date.now() + '2',
+          label: 'Option B',
+          correct: false,
+          target: null
+        });
+      }
+      this.showInspector(this.selectedNode);
+    }
+    
+    this.updateNodeElement(this.selectedNode);
+    this.updateCanvas();
+  },
+  
+  toggleImage: function(imgId) {
+    if(!this.selectedNode) return;
+    var idx = this.selectedNode.images.indexOf(imgId);
+    if(idx >= 0) {
+      this.selectedNode.images.splice(idx, 1);
+    } else {
+      this.selectedNode.images.push(imgId);
+    }
+    this.showInspector(this.selectedNode);
+    this.updateNodeElement(this.selectedNode);
+  },
+  
+  addTextOverlay: function() {
+    if(!this.selectedNode) return;
+    if(!this.selectedNode.textOverlays) this.selectedNode.textOverlays = [];
+    
+    this.selectedNode.textOverlays.push({
+      time: 0,
+      duration: 3, // New default
+      text: '',
+      color: '#424242', // New default
+      image: null // New
+    });
+    this.showInspector(this.selectedNode);
+    this.updateNodeElement(this.selectedNode);
+  },
+  
+  updateTextOverlay: function(idx, prop, value) {
+    if(!this.selectedNode || !this.selectedNode.textOverlays[idx]) return;
+    
+    if(prop === 'time') {
+      value = parseFloat(value) || 0;
+    }
+    if(prop === 'duration') {
+      value = parseFloat(value) || 0.5;
+    }
+    if(prop === 'image' && value === "") {
+      value = null;
+    }
+    
+    this.selectedNode.textOverlays[idx][prop] = value;
+    
+    // Update color preview if it's a color change
+    if(prop === 'color') {
+      this.showInspector(this.selectedNode);
+    }
+    this.updateNodeElement(this.selectedNode);
+  },
+  
+  removeTextOverlay: function(idx) {
+    if(!this.selectedNode || !this.selectedNode.textOverlays) return;
+    this.selectedNode.textOverlays.splice(idx, 1);
+    this.showInspector(this.selectedNode);
+    this.updateNodeElement(this.selectedNode);
+  },
+  
+  updateChoice: function(idx, prop, value) {
+    if(!this.selectedNode || !this.selectedNode.choices[idx]) return;
+    this.selectedNode.choices[idx][prop] = prop === 'correct' ? value : value;
+    this.updateCanvas();
+  },
+  
+  addChoice: function() {
+    if(!this.selectedNode) return;
+    if(!this.selectedNode.choices) this.selectedNode.choices = [];
+    this.selectedNode.choices.push({
+      id: 'c' + Date.now(),
+      label: 'New Option',
+      correct: false,
+      target: null
+    });
+    this.showInspector(this.selectedNode);
+  },
+  
+  removeChoice: function(idx) {
+    if(!this.selectedNode || !this.selectedNode.choices) return;
+    this.selectedNode.choices.splice(idx, 1);
+    this.showInspector(this.selectedNode);
+  },
+  
+  updateNodeElement: function(node) {
+    var old = document.getElementById(node.id);
+    if(old) old.remove();
+    this.createNodeElement(node);
+    if(this.selectedNode && this.selectedNode.id === node.id) {
+      document.getElementById(node.id).classList.add('selected');
+    }
+  },
+  
+  deleteNode: function() {
+    if(!this.selectedNode) return;
+    var id = this.selectedNode.id;
+    
+    this.project.nodes = this.project.nodes.filter(function(n) { return n.id !== id; });
+    this.project.nodes.forEach(function(n) {
+      if(n.defaultNext === id) n.defaultNext = null;
+      if(n.choices) {
+        n.choices.forEach(function(c) {
+          if(c.target === id) c.target = null;
+        });
+      }
+    });
+    
+    var el = document.getElementById(id);
+    if(el) el.remove();
+    
+    if(this.project.startNode === id) {
+      this.project.startNode = this.project.nodes[0] ? this.project.nodes[0].id : null;
+    }
+    
+    this.deselect();
+    this.updateCanvas();
+    this.updateStats();
+  },
+  
+  setStart: function() {
+    if(!this.selectedNode) return;
+    this.project.startNode = this.selectedNode.id;
+    var nodes = document.querySelectorAll('.node');
+    for(var i = 0; i < nodes.length; i++) {
+      nodes[i].classList.remove('start');
+    }
+    document.getElementById(this.selectedNode.id).classList.add('start');
+    this.showInspector(this.selectedNode);
+  },
+  
+  duplicateNode: function() {
+    if(!this.selectedNode) return;
+    var copy = JSON.parse(JSON.stringify(this.selectedNode));
+    copy.id = 'node_' + Date.now() + Math.random().toString(36).substr(2,4);
+    copy.x += 60;
+    copy.y += 60;
+    copy.title += ' (Copy)';
+    // Reset choice IDs
+    if(copy.choices) {
+      copy.choices.forEach(function(c) {
+        c.id = 'c' + Date.now() + Math.random().toString(36).substr(2,4);
+      });
+    }
+    this.project.nodes.push(copy);
+    this.createNodeElement(copy);
+    this.updateCanvas();
+    this.updateStats();
+  },
+  
+  startDrag: function(e, node) {
+    e.preventDefault();
+    this.dragging = node;
+    var rect = e.target.getBoundingClientRect();
+    this.dragOffset = {
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top
+    };
+    
+    var self = this;
+    var moveHandler = function(e) { self.onDrag(e); };
+    var upHandler = function() {
+      self.dragging = null;
+      document.removeEventListener('mousemove', moveHandler);
+      document.removeEventListener('mouseup', upHandler);
+    };
+    
+    document.addEventListener('mousemove', moveHandler);
+    document.addEventListener('mouseup', upHandler);
+  },
+  
+  onDrag: function(e) {
+    if(!this.dragging) return;
+    var canvas = document.getElementById('canvas').getBoundingClientRect();
+    this.dragging.x = e.clientX - canvas.left - this.dragOffset.x;
+    this.dragging.y = e.clientY - canvas.top - this.dragOffset.y;
+    
+    var el = document.getElementById(this.dragging.id);
+    el.style.left = this.dragging.x + 'px';
+    el.style.top = this.dragging.y + 'px';
+    
+    this.updateCanvas();
+  },
+  
+  updateCanvas: function() {
+    var oldConns = document.querySelectorAll('.connection');
+    for(var i = 0; i < oldConns.length; i++) {
+      oldConns[i].remove();
+    }
+    
+    var self = this;
+    var connectionCount = 0;
+    
+    this.project.nodes.forEach(function(node) {
+      if(node.defaultNext) {
+        self.drawConnection(node.id, node.defaultNext, 'default');
+        connectionCount++;
+      }
+      
+      if(node.choices) {
+        node.choices.forEach(function(choice) {
+          if(choice.target) {
+            self.drawConnection(node.id, choice.target, 
+                                choice.correct ? 'correct' : 'incorrect');
+            connectionCount++;
+          }
+        });
+      }
+    });
+    
+    document.getElementById('connectionCount').textContent = connectionCount;
+  },
+  
+  drawConnection: function(fromId, toId, type) {
+    var from = document.getElementById(fromId);
+    var to = document.getElementById(toId);
+    if(!from || !to) return;
+    
+    var canvas = document.getElementById('canvas');
+    var rect = canvas.getBoundingClientRect();
+    
+    var fromRect = from.getBoundingClientRect();
+    var toRect = to.getBoundingClientRect();
+    
+    var x1 = fromRect.left - rect.left + fromRect.width/2;
+    var y1 = fromRect.top - rect.top + fromRect.height/2;
+    var x2 = toRect.left - rect.left + toRect.width/2;
+    var y2 = toRect.top - rect.top + toRect.height/2;
+    
+    var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.className = 'connection ' + type;
+    svg.style.position = 'absolute';
+    svg.style.left = '0';
+    svg.style.top = '0';
+    svg.style.width = '100%';
+    svg.style.height = '100%';
+    
+    var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    
+    // Calculate cubic bezier control points for a smooth curve
+    var dx = x2 - x1;
+    var c1x = x1 + dx * 0.5;
+    var c1y = y1;
+    var c2x = x1 + dx * 0.5;
+    var c2y = y2;
+
+    var d = 'M ' + x1 + ' ' + y1 + ' C ' + c1x + ' ' + c1y + ', ' + c2x + ' ' + c2y + ', ' + x2 + ' ' + y2;
+    path.setAttribute('d', d);
+    
+    svg.appendChild(path);
+    canvas.appendChild(svg);
+  },
+  
+  addVideos: function(e) {
+    var self = this;
+    var files = Array.from(e.target.files);
+    
+    files.forEach(function(file) {
+      var url = URL.createObjectURL(file);
+      self.generateThumb(url).then(function(thumb) {
+        self.project.assets.videos.push({
+          id: 'v' + Date.now() + Math.random().toString(36).substr(2,4),
+          name: file.name,
+          file: file,
+          url: url,
+          thumb: thumb
+        });
+        self.updateAssetCount();
+      });
+    });
+    
+    this.showStatus('Added ' + files.length + ' video(s)');
+  },
+  
+  addImages: function(e) {
+    var files = Array.from(e.target.files);
+    var self = this;
+    
+    files.forEach(function(file) {
+      var url = URL.createObjectURL(file);
+      self.project.assets.images.push({
+        id: 'i' + Date.now() + Math.random().toString(36).substr(2,4),
+        name: file.name,
+        file: file,
+        url: url
+      });
+    });
+    
+    this.updateAssetCount();
+    this.showStatus('Added ' + files.length + ' image(s)');
+  },
+  
+  generateThumb: function(videoUrl) {
+    return new Promise(function(resolve) {
+      var video = document.createElement('video');
+      video.src = videoUrl;
+      video.currentTime = 1;
+      video.addEventListener('loadeddata', function() {
+        var canvas = document.createElement('canvas');
+        canvas.width = 320;
+        canvas.height = 180;
+        var ctx = canvas.getContext('2d');
+        ctx.drawImage(video, 0, 0, 320, 180);
+        resolve(canvas.toDataURL('image/jpeg', 0.5));
+      });
+      video.addEventListener('error', function() {
+        resolve(null);
+      });
+    });
+  },
+  
+  updateAssetCount: function() {
+    document.getElementById('videoCount').textContent = this.project.assets.videos.length;
+    document.getElementById('imageCount').textContent = this.project.assets.images.length;
+  },
+  
+  updateStats: function() {
+    document.getElementById('nodeCount').textContent = this.project.nodes.length;
+    this.updateAssetCount();
+  },
+  
+  toggleAddMenu: function() {
+    var opts = document.getElementById('addOptions');
+    opts.classList.toggle('show');
+  },
+  
+  showStatus: function(msg) {
+    var status = document.getElementById('status');
+    status.textContent = msg;
+    status.classList.add('show');
+    setTimeout(function() { status.classList.remove('show'); }, 3000);
+  },
+  
+  // Preview System
+  preview: function() {
+    var startNode = this.project.nodes.find(function(n) { 
+      return n.id === App.project.startNode; 
+    });
+    
+    if(!startNode) {
+      this.showStatus('Please set a start node first');
+      return;
+    }
+    
+    this.previewState = {
+      currentNode: startNode,
+      history: [],
+      videoTime: 0,
+      overlayTimer: null,
+      videoTimeUpdater: null
+    };
+    
+    document.getElementById('previewModal').classList.add('show');
+    document.getElementById('previewTitle').textContent = 'Preview: ' + this.project.title;
+    this.renderPreviewNode(startNode);
+  },
+  
+  renderPreviewNode: function(node) {
+    var body = document.getElementById('previewBody');
+    var nav = document.getElementById('previewNav');
+    var self = this;
+    
+    // Clear any existing timers/listeners
+    if(this.previewState.overlayTimer) {
+      clearInterval(this.previewState.overlayTimer);
+      this.previewState.overlayTimer = null;
+    }
+    var oldVideoEl = document.getElementById('previewVideo');
+    if (oldVideoEl && this.previewState.videoTimeUpdater) {
+        oldVideoEl.removeEventListener('timeupdate', this.previewState.videoTimeUpdater);
+        this.previewState.videoTimeUpdater = null;
+    }
+    
+    var html = '';
+    
+    // Video
+    if(node.video) {
+      var videoAsset = this.project.assets.videos.find(function(v) { 
+        return v.id === node.video; 
+      });
+      if(videoAsset) {
+        html += '<video class="preview-video" controls autoplay id="previewVideo">';
+        html += '<source src="' + videoAsset.url + '" type="video/mp4">';
+        html += '</video>';
+      }
+    }
+    
+    // Text overlay container (shows timed text)
+    html += '<div class="preview-text-overlay" id="textOverlay"></div>';
+    
+    html += '<div class="preview-content-section">';
+    
+    // Images
+    if(node.images && node.images.length) {
+      html += '<div class="preview-images">';
+      for(var i = 0; i < node.images.length; i++) {
+        var imgAsset = this.project.assets.images.find(function(img) {
+          return img.id === node.images[i];
+        });
+        if(imgAsset) {
+          html += '<img src="' + imgAsset.url + '">';
+        }
+      }
+      html += '</div>';
+    }
+    
+    // Question
+    if(node.question) {
+      html += '<div class="preview-question">' + node.question + '</div>';
+    }
+    
+    // Choices
+    if(node.choices && node.choices.length) {
+      html += '<div class="preview-choices">';
+      for(var j = 0; j < node.choices.length; j++) {
+        var choice = node.choices[j];
+        html += '<div class="preview-choice" data-choice-idx="' + j + '">';
+        html += choice.label;
+        html += '</div>';
+      }
+      html += '</div>';
+    }
+    
+    html += '</div>';
+    
+    body.innerHTML = html;
+    
+    // Setup text overlays timer if there are overlays
+    var overlayEl = document.getElementById('textOverlay');
+    var videoEl = document.getElementById('previewVideo');
+        
+    if(node.textOverlays && node.textOverlays.length > 0) {
+        var sortedOverlays = node.textOverlays.slice().sort(function(a, b) {
+            return a.time - b.time;
+        });
+        var activeOverlay = null;
+
+        var updateOverlays = function(currentTime) {
+            var overlayToShow = null;
+            for (var i = 0; i < sortedOverlays.length; i++) {
+                var overlay = sortedOverlays[i];
+                var startTime = parseFloat(overlay.time) || 0;
+                var duration = parseFloat(overlay.duration) || 3;
+                var endTime = startTime + duration;
+                
+                if (currentTime >= startTime && currentTime < endTime) {
+                    overlayToShow = overlay;
+                    break; // Found the active overlay
+                }
+            }
+
+            if (overlayToShow && overlayToShow !== activeOverlay) {
+                activeOverlay = overlayToShow;
+                var overlayContent = '';
+                if (overlayToShow.image) {
+                    var imgAsset = self.project.assets.images.find(function(i) { return i.id === overlayToShow.image; });
+                    if (imgAsset) { 
+                        overlayContent += '<img src="' + imgAsset.url + '">'; 
+                    }
+                }
+                if (overlayToShow.text) { 
+                    overlayContent += '<div>' + overlayToShow.text + '</div>'; 
+                }
+                
+                overlayEl.innerHTML = overlayContent;
+                overlayEl.style.backgroundColor = overlayToShow.color || 'rgba(0,0,0,0.7)';
+                overlayEl.classList.add('show');
+            } else if (!overlayToShow && activeOverlay) {
+                activeOverlay = null;
+                overlayEl.classList.remove('show');
+            }
+        };
+
+        if (videoEl) {
+            this.previewState.videoTimeUpdater = function() {
+                updateOverlays(videoEl.currentTime);
+            };
+            videoEl.addEventListener('timeupdate', this.previewState.videoTimeUpdater);
+        } else {
+            // Fallback for nodes without video (uses internal timer)
+            var sceneTime = 0;
+            this.previewState.overlayTimer = setInterval(function() {
+                sceneTime += 0.1;
+                updateOverlays(sceneTime);
+                
+                var nodeDuration = parseFloat(node.duration) || 10;
+                if(sceneTime > nodeDuration) {
+                    clearInterval(self.previewState.overlayTimer);
+                    self.previewState.overlayTimer = null;
+                }
+            }, 100);
+        }
+    }
+    
+    // Add choice click handlers
+    var choiceEls = body.querySelectorAll('.preview-choice');
+    for(var k = 0; k < choiceEls.length; k++) {
+      choiceEls[k].addEventListener('click', function(e) {
+        var idx = parseInt(e.target.getAttribute('data-choice-idx'));
+        self.handlePreviewChoice(node, idx);
+      });
+    }
+    
+    // Navigation buttons
+    var navHtml = '';
+    
+    if(this.previewState.history.length > 0) {
+      navHtml += '<button class="btn secondary" onclick="App.previewBack()">← Back</button>';
+    }
+    
+    if(node.type === 'end') {
+      navHtml += '<button class="btn" onclick="App.restartPreview()">Restart</button>';
+    } else if(!node.choices || node.choices.length === 0) {
+      if(node.defaultNext) {
+        navHtml += '<button class="btn" onclick="App.previewNext()">Continue →</button>';
+      }
+    }
+    
+    nav.innerHTML = navHtml;
+  },
+  
+  handlePreviewChoice: function(node, idx) {
+    var choice = node.choices[idx];
+    var choiceEls = document.querySelectorAll('.preview-choice');
+    
+    // Show correct/incorrect
+    for(var i = 0; i < choiceEls.length; i++) {
+      if(i === idx) {
+        choiceEls[i].classList.add(choice.correct ? 'correct' : 'incorrect');
+      }
+    }
+    
+    // Navigate after delay
+    var self = this;
+    setTimeout(function() {
+      self.previewState.history.push(node.id);
+      
+      var nextId = choice.target || node.defaultNext;
+      if(nextId) {
+        var nextNode = self.project.nodes.find(function(n) { 
+          return n.id === nextId; 
+        });
+        if(nextNode) {
+          self.previewState.currentNode = nextNode;
+          self.renderPreviewNode(nextNode);
+        } else {
+          self.closePreview();
+        }
+      } else {
+        self.closePreview();
+      }
+    }, 1000);
+  },
+  
+  previewNext: function() {
+    if(!this.previewState.currentNode || !this.previewState.currentNode.defaultNext) return;
+    
+    this.previewState.history.push(this.previewState.currentNode.id);
+    var nextNode = this.project.nodes.find(function(n) { 
+      return n.id === App.previewState.currentNode.defaultNext; 
+    });
+    
+    if(nextNode) {
+      this.previewState.currentNode = nextNode;
+      this.renderPreviewNode(nextNode);
+    }
+  },
+  
+  previewBack: function() {
+    if(this.previewState.history.length === 0) return;
+    
+    var prevId = this.previewState.history.pop();
+    var prevNode = this.project.nodes.find(function(n) { 
+      return n.id === prevId; 
+    });
+    
+    if(prevNode) {
+      this.previewState.currentNode = prevNode;
+      this.renderPreviewNode(prevNode);
+    }
+  },
+  
+  restartPreview: function() {
+    var startNode = this.project.nodes.find(function(n) { 
+      return n.id === App.project.startNode; 
+    });
+    
+    if(startNode) {
+      // Must clear timers from previous run
+      if(this.previewState.overlayTimer) {
+          clearInterval(this.previewState.overlayTimer);
+      }
+      var oldVideoEl = document.getElementById('previewVideo');
+      if (oldVideoEl && this.previewState.videoTimeUpdater) {
+          oldVideoEl.removeEventListener('timeupdate', this.previewState.videoTimeUpdater);
+      }
+        
+      this.previewState = {
+        currentNode: startNode,
+        history: [],
+        videoTime: 0,
+        overlayTimer: null,
+        videoTimeUpdater: null
+      };
+      this.renderPreviewNode(startNode);
+    }
+  },
+  
+  closePreview: function() {
+    document.getElementById('previewModal').classList.remove('show');
+    
+    // Clear timers and listeners
+    if(this.previewState.overlayTimer) {
+      clearInterval(this.previewState.overlayTimer);
+      this.previewState.overlayTimer = null;
+    }
+    
+    var videoEl = document.getElementById('previewVideo');
+    if (videoEl && this.previewState.videoTimeUpdater) {
+         videoEl.removeEventListener('timeupdate', this.previewState.videoTimeUpdater);
+         this.previewState.videoTimeUpdater = null;
+    }
+    
+    // Pause any playing videos
+    var videos = document.querySelectorAll('.preview-video');
+    for(var i = 0; i < videos.length; i++) {
+      videos[i].pause();
+    }
+  },
+  
+  save: function() {
+    var defaultName = this.project.title.replace(/[^a-z0-9]/gi, '_') + '.lxr';
+    var fileName = prompt('Enter filename:', defaultName);
+    if(!fileName) return; // User cancelled
+            
+    var data = JSON.stringify(this.project, null, 2);
+    var blob = new Blob([data], {type: 'application/json'});
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = fileName.endsWith('.lxr') ? fileName : fileName + '.lxr';
+    a.click();
+    this.showStatus('Project saved as ' + a.download);
+  },
+  
+  load: function() {
+    document.getElementById('loader').click();
+  },
+  
+  loadFile: function(e) {
+    var file = e.target.files[0];
+    if(!file) return;
+    
+    var self = this;
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      try {
+        self.project = JSON.parse(e.target.result);
+        document.getElementById('projectTitle').value = self.project.title;
+        
+        // Ensure backward compatibility
+        self.project.nodes.forEach(function(node) {
+          if(!node.textOverlays) node.textOverlays = [];
+          
+          // Ensure new fields exist on loaded overlays
+          node.textOverlays.forEach(function(overlay) {
+             if(overlay.duration === undefined) overlay.duration = 3;
+             if(overlay.image === undefined) overlay.image = null;
+          });
+            
+          if(!node.defaultNext && node.nextNode) {
+            node.defaultNext = node.nextNode;
+            delete node.nextNode;
+          }
+        });
+        
+        document.getElementById('canvas').innerHTML = '';
+        self.project.nodes.forEach(function(node) {
+          self.createNodeElement(node);
+        });
+        self.updateCanvas();
+        self.updateStats();
+        self.deselect();
+        self.showStatus('Project loaded');
+      } catch(err) {
+        console.error(err);
+        alert('Invalid project file');
+      }
+    };
+    reader.readAsText(file);
+  },
+  
+  export: function() {
+    var self = this;
+    var defaultName = this.project.title.replace(/[^a-z0-9]/gi, '_') + '_webxr.zip';
+    var fileName = prompt('Enter export filename:', defaultName);
+    if(!fileName) return; // User cancelled
+    
+    var zip = new JSZip();
+    
+    var html = this.generateWebXR();
+    zip.file('index.html', html);
+    
+    var assetsFolder = zip.folder('assets');
+    this.project.assets.videos.forEach(function(video) {
+      if(video.file) assetsFolder.file(video.name, video.file);
+    });
+    this.project.assets.images.forEach(function(img) {
+      if(img.file) assetsFolder.file(img.name, img.file);
+    });
+    
+    zip.generateAsync({type: 'blob'}).then(function(blob) {
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = fileName.endsWith('.zip') ? fileName : fileName + '.zip';
+      a.click();
+      self.showStatus('WebXR package exported as ' + a.download);
+    });
+  },
+  
+  generateWebXR: function() {
+    // This function creates a simplified A-Frame HTML file for export
+    // It now passes the full project spec, including text overlays with duration/image
+    
+    var videoAssets = this.project.assets.videos.map(function(v) {
+      return '<video id="' + v.id + '" src="assets/' + v.name + '" crossorigin></video>';
+    }).join('\n        ');
+    
+    var imageAssets = this.project.assets.images.map(function(i) {
+      return '<img id="' + i.id + '" src="assets/' + i.name + '" crossorigin>';
+    }).join('\n        ');
+    
+    // Create a version of the project with asset files removed, as they won't be in the JSON
+    var exportProject = JSON.parse(JSON.stringify(this.project));
+    exportProject.assets.videos.forEach(function(v) { 
+        v.file = v.name; // Replace file blob with name
+        v.url = "assets/" + v.name;
+        v.thumb = null; // Thumbs are not needed in exported pack
+    });
+    exportProject.assets.images.forEach(function(i) {
+        i.file = i.name; // Replace file blob with name
+        i.url = "assets/" + i.name;
+    });
+    
+    return '<!DOCTYPE html>\n' +
+      '<html>\n' +
+      '<head>\n' +
+      '  <meta charset="utf-8">\n' +
+      '  <title>' + this.project.title + '</title>\n' +
+      '  <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></' + 'script>\n' +
+      '</head>\n' +
+      '<body>\n' +
+      '  <a-scene>\n' +
+      '    <a-assets>\n' +
+      '      ' + videoAssets + '\n' +
+      '      ' + imageAssets + '\n' +
+      '    </a-assets>\n' +
+      '    \n' +
+      '    <a-sky id="sky"></a-sky>\n' +
+      '    <a-camera>\n' +
+      '      <a-cursor></a-cursor>\n' +
+      '    </a-camera>\n' +
+      '    \n' +
+      '    <script>\n' +
+      '      const flow = ' + JSON.stringify(exportProject) + ';\n' +
+      '      console.log("LærbarXR Scene Loaded", flow);\n' +
+      '      // WebXR runtime implementation would go here\n' +
+      '      // It would use the `flow` object to manage scenes, overlays, and navigation\n' +
+      '    </' + 'script>\n' +
+      '  </a-scene>\n' +
+      '</body>\n' +
+      '</html>';
+  }
 };
 
 window.addEventListener('DOMContentLoaded', function() { App.init(); });
 </script>
 </body>
 </html>
+ 
